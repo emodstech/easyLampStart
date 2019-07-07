@@ -8,7 +8,7 @@ if [ -e "/etc/apache2/sites-available/$hostName.ru.conf" ]; then  #Провер�
 	read -r -p "Сайт уже добавлен, вы хотите его удалить [y/N] " response 
 		if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 			sudo rm  /etc/apache2/sites-available/$hostName.ru.conf #удаляем virtualHost
-			sudo rm -rf ~/$path/$hostName.ru  
+			sudo rm -rf ~/$path/$hostName.ru  #удаляем папку с сайтом
 			sudo a2dissite $hostName.ru.conf
 			sudo sed -i_bak -e "/[\t]$hostName/d" /etc/hosts
 			sudo systemctl restart apache2
