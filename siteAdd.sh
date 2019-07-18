@@ -10,9 +10,9 @@ if [ -e "/etc/apache2/sites-available/$hostName.ru.conf" ]; then  #Провер�
 			sudo rm  /etc/apache2/sites-available/$hostName.ru.conf #удаляем virtualHost
 			sudo rm -rf ~/$path/$hostName.ru  #удаляем папку с сайтом
 			sudo a2dissite $hostName.ru.conf # удаляем конфиг
-			sudo sed -i_bak -e "/[\t]$hostName/d" /etc/hosts
-			sudo systemctl restart apache2
-			echo "Сайт $hostName.ru удалён"
+			sudo sed -i_bak -e "/[\t]$hostName/d" /etc/hosts # удаляем адрес и hosts	
+			sudo systemctl restart apache2 #Перезагрузка apache
+			echo "Сайт $hostName.ru удалён" 
 		else 
 			echo "Отмена - выход из скрипта"
 		fi
