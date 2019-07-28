@@ -12,7 +12,11 @@
 
 Запускаем <b>easyLampStart.sh</b>, cкрипт редактирует конфиги 000-default.conf, apache2.conf, <br>
 cоздает папку "web" для проектов по адресу <b>/home/user/web</b><br>
-При необходимости создает пользователя mysql.
+При необходимости создает пользователя mysql.<br>
+Корректирует ошибки phpmyadmin по выбору<br>
+
+<b>Warning in ./libraries/sql.lib.phpcount(): Parameter must be an array <br>
+Warning in ./libraries/plugin_interface.lib.php#532<br></b>
 
 Запускаем файл <b>SiteAdd.sh</b> и вводим название папки с сайтом/проектом</br>
 Скрипт создает virtualhost, создает папку с названием сайта по адресу /home/user/web/проект и добавляет в hosts сайт. <br>
