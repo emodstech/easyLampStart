@@ -38,3 +38,21 @@ EQF
 else
 	echo "Пользователь не добавлен"
 fi
+
+read -r -p "Скорректировать ошибку 'Warning in ./libraries/sql.lib.phpcount(): Parameter must be an array' phpmyadmin [y/N] ? " resp
+if	[[ "$resp" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+	sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php
+	sudo systemctl restart mysql.service
+	echo "ошибка исправлена"
+else
+	echo "несконфигурированно"
+fi
+
+read -r -p "Скорректировать ошибку 'Warning in ./libraries/plugin_interface.lib.php#532' phpmyadmin [y/N] ? " resp
+if	[[ "$resp" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+	sudo sed -i "s#count(\$options) >#count((array)\$options) >#" /usr/share/phpmyadmin/libraries/plugin_interface.lib.php
+	sudo systemctl restart mysql.service
+	echo "ошибка исправлена"
+else
+	echo "несконфигурированно"
+fi
