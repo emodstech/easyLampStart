@@ -1,4 +1,10 @@
 # easyLampStart Linux mint / ubuntu
+
+Устанавливаем lamp <br>
+<b>sudo apt-get install lamp-server^</b><br>
+Устанавливаем phpmyadmin <br>
+<b>sudo apt-get install phpmyadmin</b><br>
+
 Конфигурация lamp сервера. <br>
 
 Скачиваем файлы, в настройка файла - во вкладке права, установить <b>"Разрешить исполнять как программу"</b><br>
