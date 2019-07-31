@@ -13,7 +13,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 
 	<Directory /home/$USER/web/>
 		Options Indexes FollowSymLinks
-		AllowOverride None
+		AllowOverride All
 		Require all granted
 	</Directory>
 EOF
