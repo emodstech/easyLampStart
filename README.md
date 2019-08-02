@@ -13,6 +13,7 @@
 Запускаем <b>easyLampStart.sh</b>, cкрипт редактирует конфиги 000-default.conf, apache2.conf, <br>
 cоздает папку "web" для проектов по адресу <b>/home/user/web</b><br>
 При необходимости создает пользователя mysql.<br>
+
 Корректирует ошибки phpmyadmin по выбору<br>
 
 <b>Warning in ./libraries/sql.lib.phpcount(): Parameter must be an array <br>
